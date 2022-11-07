@@ -1,9 +1,33 @@
-const x = fetch("https://rickandmortyapi.com/api/character/1")
+const megaFetch = () => {
+    fetch("userApi").then( res => res.json().then(
+        user => {
+            fetch(`cartApi/${user}`).then( res => res.json().then(
+                userCart => {
+                    fetch(`productsApi/${userCart}`).then( res => res.json().then(
+                        allProducts => { console.log(allProducts)}
+                    ))
+                }
+            ))
+            }
+    )
+    )
+}
 
-x
-.then(res => res.json())
-.then(x => console.log(x))
-.catch(e => console.error(e))
+// Not so cool... So we can use async/await keyword! Just syntx sugart 🍰
 
-// first, sharks.
-console.log("🦈🦈🦈🦈🦈🦈🦈")
+const getHuman = async (num) => {
+    const res = await fetch(`https://rickandmortyapi.com/api/character/${num}`);
+    const human = await res.json();
+    return human
+}
+
+(async () => {
+
+const human = await getHuman(1)
+
+console.log(human);
+
+}
+)()
+
+console.log("Start...")
