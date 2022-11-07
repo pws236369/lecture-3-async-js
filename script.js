@@ -1,5 +1,8 @@
-console.log("Yalla!")
+const getSharks = () => {
+    setTimeout( () => {
+        return "🦈🦈🦈🦈🦈🦈"
+    }, 3500)  
+}
 
-setTimeout( () => {
-    console.log("🐠🐠🐠🐠🐠🐠")
-}, 2000)
+const mySharks = getSharks()
+console.log(mySharks)
