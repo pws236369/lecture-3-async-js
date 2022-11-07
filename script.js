@@ -1,19 +1,3 @@
-const woltPromise = new Promise(
-    (resolve, reject) => {
-        woltIsHere = true
-        if(woltIsHere) {
-            setTimeout( () => { // Now we need to wait...
-                resolve("Yami! 🍦")
-            }, 2000)            
-        } else {
-            reject("Oh no! 😠")
-        }
-})
+const x = fetch("https://rickandmortyapi.com/api/character/2")
 
-
-woltPromise
-.then( result => { console.log(result)})
-.catch( error => { console.error(error)})
-
-
-console.log(woltPromise)
+console.log(x)
