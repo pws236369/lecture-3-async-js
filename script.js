@@ -1,9 +1,10 @@
 const woltPromise = new Promise(
     (resolve, reject) => {
-        se
         woltIsHere = true
         if(woltIsHere) {
-            resolve("Yami! 🍦")
+            setTimeout( () => { // Now we need to wait...
+                resolve("Yami! 🍦")
+            }, 2000)            
         } else {
             reject("Oh no! 😠")
         }
