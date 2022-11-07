@@ -1,7 +1,18 @@
-setTimeout( () => {
-    console.log("🦈🦈🦈🦈🦈🦈")
-}, 0)  
+const woltPromise = new Promise(
+    (resolve, reject) => {
+        se
+        woltIsHere = true
+        if(woltIsHere) {
+            resolve("Yami! 🍦")
+        } else {
+            reject("Oh no! 😠")
+        }
+})
 
-console.log("🐳🐳🐳🐳🐳🐳")
+
+woltPromise
+.then( result => { console.log(result)})
+.catch( error => { console.error(error)})
 
 
+console.log(woltPromise)
