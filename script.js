@@ -22,19 +22,19 @@ const getHuman = async (num) => {
 }
 
 const getFamily = async () => { // We forget to add await! add them :) 
-    const rick = await getHuman(1)
-    const morty = await getHuman(2)
-    const summer = await getHuman(3)
+    const rick =  getHuman(1)
+    const morty =  getHuman(2)
+    const summer =  getHuman(3)
 
 
-    return [rick, morty, summer]
+    return Promise.all([rick, morty, summer])
 }
 
 (async () => {
 
 const family = await getFamily()
 
-console.log(human); // Let's check the network tab!
+console.log(family); // Let's check the network tab!
 
 }
 )()
