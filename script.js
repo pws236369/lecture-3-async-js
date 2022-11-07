@@ -21,9 +21,16 @@ const getHuman = async (num) => {
     return human
 }
 
+const getFamily = async () => { // We forget to add await! add them :) 
+    const rick = getHuman(1)
+    const morty = getHuman(2)
+
+    return [rick, morty]
+}
+
 (async () => {
 
-const human = await getHuman(1)
+const human = await getFamily()
 
 console.log(human);
 
