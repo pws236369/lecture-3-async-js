@@ -21,13 +21,20 @@ const getHuman = async (num) => {
     return human
 }
 
+const getBadHuman = async (num) => {
+    const res = await fetch(`https://rickandasdsadmortyapi.com/api/character/${num}`);
+    const human = await res.json();
+    return human
+}
+
 const getFamily = async () => { // We forget to add await! add them :) 
     const rick =  getHuman(1)
-    const morty =  getHuman(2)
+    const morty =  getBadHuman(2)
     const summer =  getHuman(3)
 
 
-    return Promise.all([rick, morty, summer])
+    //return Promise.all([rick, morty, summer])
+    return Promise.allSettled([rick, morty, summer])
 }
 
 (async () => {
