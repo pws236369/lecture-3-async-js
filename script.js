@@ -1,8 +1,13 @@
-const getSharks = () => {
+/* Now, we will pass a callback. only after
+The timeout is done, we invoce the callback function.
+*/ 
+
+const getSharks = (cb) => {
     setTimeout( () => {
-        return "🦈🦈🦈🦈🦈🦈"
+        cb("🦈🦈🦈🦈🦈🦈")
     }, 3500)  
 }
 
-const mySharks = getSharks()
-console.log(mySharks)
+getSharks( (sharks) => console.log(sharks))
+
+// And now, lets try with 1 ms.
