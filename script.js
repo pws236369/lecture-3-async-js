@@ -34,12 +34,18 @@ const getFamily = async () => { // We forget to add await! add them :)
 
 
     //return Promise.all([rick, morty, summer])
-    return Promise.allSettled([rick, morty, summer])
+    return Promise.all([rick, morty, summer])
 }
 
 (async () => {
 
-const family = await getFamily()
+    let family;
+    try {
+         family = await getFamily()
+    } catch (e) {
+        console.log("😎😎😎😎😎" + e)
+    }
+
 
 console.log(family); // Let's check the network tab!
 
